@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width= initial-scale= 1.0">
+    <title>Lista de tarefas</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+       
+        <h1>Adicionar  tarefas</h1>
+        <p id="mensagem"></p>
+        <input type="text" id="tarefas"><br><br>
+        <button  onclick="adicionarTarefas()" onchange=" window.onload()">Adicionar tarefa</button><br><br>
+     
+   <nav>
+            <ul id="tarefasUser">
+                <ul>
+                   
+                </ul>
+                </nav>
+             
+              
+                
+              <button onclick="apagar()">Apagar Tarefas</button> </ul>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
