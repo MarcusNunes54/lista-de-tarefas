@@ -1,0 +1,60 @@
+function adicionarTarefas() {
+
+
+    //pegando o inpunt com o valor 
+    let tarefas = document.getElementById('tarefas')
+    let tarefa = tarefas.value;
+    // realizando a condicional com IF e ELSE
+    if (tarefa == "") {
+        alert('voce precisa digitar a tarefa')
+    } else {
+       
+        // SALVANDO   NO LOCALSTORAGE
+        let itens = JSON.parse(localStorage.getItem("tarefa")) ?? []
+        itens.push({
+            id: itens.length + 1,
+            tarefa: tarefa
+        })
+        localStorage.setItem("tarefa", JSON.stringify(itens))
+        let mensagem = document.getElementById('mensagem').textContent = "Tarefa adicionada com sucesso!";
+        tarefas.value = ""
+    }
+
+}
+// FUNÇÃO PARA LSITAR COM FOREACH
+function listDateUser(tarefas, tarefa) {
+
+
+    list = document.getElementById(tarefa)
+    tarefas = JSON.parse(localStorage.getItem('tarefa'))
+    window.load = setTimeout(() => {
+        window.location.reload(1);
+    }, 15000);
+    tarefas.forEach((user) => {
+
+        const newListTarefas = `
+          <li>${user.id} ${user.tarefa}</li>
+    `
+        list.innerHTML += newListTarefas
+
+      
+       
+        
+    });
+   
+
+} listDateUser('users', 'tarefasUser')
+
+ // FUNÇÃO PARA APAGAR
+function apagar() {
+
+    localStorage.removeItem("tarefa");
+    window.load = setTimeout(() => {
+        window.location.reload(1);
+    }, 1000);
+
+   
+
+}
+
+
